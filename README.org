@@ -1,0 +1,9 @@
+#+title: DrunkenLoader
+#+AUTHOR: ybenel (Younes Ben El Haj)
+
+This project was an attempt to develop a FUD stager loader for SliverC2. However, there were issues related to AV blocking both malicious and non-malicious code written and compiled in Golang. AV employed a lazy approach of blocking all Go programs based on runtime level signatures, which is not an effective way to prevent malicious programs. One possible workaround is to submit your executables to Microsoft for analysis, but this may not be a feasible option if you have malicious intentions. Even with Microsoft's approval, your application may still be blocked by Defender SmartScreen. Another approach is to acquire a signing certificate to sign your executables, which would increase the trust level. Although I had plans to further explore this project in the future, it has become redundant for now. Nonetheless, it was fascinating to delve into the workings of Golang syscalls and discover different ways to do one thing.
+
+* Build
+#+begin_src shell
+GOOS=windows GOARCH=amd64 go build -ldflags="-s -w" .
+#+end_src
